@@ -12,9 +12,6 @@ Take a look at the two repositories:
 And answer the following questions about them:
 
   * These repositories are at two different websites - github and bitbucket - what are these sites?  What service do they provide? Which is better?
-
-Testing clone 
-
   * Who made the last commit to repository A?
   * Who made the first commit to repository A?
   * Who made the first and last commits to repository B?
