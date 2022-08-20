@@ -3,9 +3,9 @@ import java.awt.Point;
 
 public class Stage {
   Grid grid;
-  Stone grass;
-  Stone water;
-  Stone sand;
+  Actor grass;
+  Actor water;
+  Actor sand;
 
   public Stage() {
     grid = new Grid();
