@@ -10,10 +10,10 @@ public class Stage {
 
   public Stage() {
     grid = new Grid();
-    grass = new Grass(grid.cellAtColRow(0, 0));
-    water = new Water(grid.cellAtColRow(0, 15));
-    sand = new Sand(grid.cellAtColRow(12, 9));
-    stone = new Stone(grid.cellAtColRow(5, 10));
+    grass = new Grass(grid.cellAtColRow(1, 1));
+    water = new Water(grid.cellAtColRow(1, 2));
+    sand = new Sand(grid.cellAtColRow(1, 3));
+    stone = new Stone(grid.cellAtColRow(1, 4));
   }
 
   public void paint(Graphics g, Point mouseLoc) {
