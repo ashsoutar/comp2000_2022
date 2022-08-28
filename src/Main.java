@@ -4,16 +4,13 @@ import java.awt.*;
 class Main extends JFrame {
 
 public static void main(String[] args) throws Exception {
-Main window = new Main();
-window.run();
+Main Canvas = new Main();
+Canvas.run();
 }
 
 private Main() {
-App canvas = new App();
-this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+Canvas canvas = new Canvas();
 this.setContentPane(canvas);
-this.pack();
-this.setVisible(true);
 }
 
 public void run() throws Exception {
@@ -22,18 +19,15 @@ this.repaint();
 }
 }
 
-class App extends JPanel {
+//sets size of window
+class Canvas extends JPanel {
 
-GameContainer gameContainer;
-
-public App() {
+public Canvas() {
 setPreferredSize(new Dimension(720, 720));
-gameContainer = new GameContainer();
 }
 
 @Override
 public void paint(Graphics g) {
-gameContainer.paint(g, getMousePosition());
 }
 
 }

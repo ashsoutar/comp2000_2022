@@ -1,4 +1,3 @@
-//outline for all cell blocks to follow i.e. sets the heirarchy
 import java.awt.*;
 
 public abstract class GameTile implements Heirarchy {

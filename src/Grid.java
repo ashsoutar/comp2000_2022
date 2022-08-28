@@ -9,7 +9,6 @@ int border = 10, cellSize = 35, cellLength = 20;
 int boardSize = cellSize * cellLength;
 Cell[][] cells = new Cell[cellLength][cellLength];
 
-// Constructor that initialises grid with randomised tiles
 public Grid(int width, int height) {
 this.width = width;
 this.height = height;
@@ -76,7 +75,6 @@ cells[i][j].paint(g);
 }
 }
 
-// Returns whether or not the grid contains a given Point
 public boolean contains(Point point) {
 
 // checks for null and border outlines
