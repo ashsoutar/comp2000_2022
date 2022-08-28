@@ -19,25 +19,27 @@ GameTile type;
 for (int i = 0; i < cells.length; i++) {
 for (int j = 0; j < cells[i].length; j++) {
 random = (int) (Math.random() * 10); // sets random
+
+
 // sets coloured tiles 
 switch (random) {
 case 0:
-type = new Water();
-break;
+type = new Sand();
+break;                  
 case 1:
 type = new Stone();
 break;
 case 2:
-type = new Grass();
-break;
-case 3:
-type = new Wall();
+type = new Water();
 break;
 case 4:
+type = new Wall();
+break;
+case 3:
 type = new Fence();
 break;
 default:
-type = new Sand();
+type = new Grass();         //fills majority 
 }
 cells[i][j] = new Cell(border + cellSize * i, border + cellSize * j, type);
 }
