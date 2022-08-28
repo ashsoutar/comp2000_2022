@@ -9,25 +9,29 @@ window.run();
 }
 
 private Main() {
-Canvas canvas = new Canvas();
-this.setContentPane(canvas);
-}
+    Canvas canvas = new Canvas();
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    this.setContentPane(canvas);
+    this.pack();
+    this.setVisible(true);
+    }
 
 public void run() throws Exception {
-while (true) {
-this.repaint();
-}
+    while (true) {
+    this.repaint();
+    }
 }
 
 //sets size of window
 class Canvas extends JPanel {
-
-public Canvas() {
-setPreferredSize(new Dimension(720, 720));
+    GameContainer gameContainer;
+    public Canvas() {
+    setPreferredSize(new Dimension(720, 720));
 }
 
 @Override
 public void paint(Graphics g) {
+    gameContainer.paint(g, getMousePosition());
 }
 
 }
