@@ -4,7 +4,6 @@ import java.awt.*;
 public class Fence extends GameTile {
 
 public Fence() {
-super(Color.MAGENTA, "Fence");
-}
-
+    super(Color.MAGENTA, "Fence");
+    }
 }

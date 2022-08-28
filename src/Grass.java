@@ -4,7 +4,6 @@ import java.awt.*;
 public class Grass extends GameTile {
 
 public Grass() {
-super(Color.GREEN, "Grass", MovementCost = 20);
-}
-
+    super(Color.GREEN, "Grass", MovementCost = 20);
+    }
 }

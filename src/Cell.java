@@ -6,8 +6,8 @@ static int size = 35;
 GameTile tile;
 
 public Cell(int x, int y, GameTile tile) {
-super(x, y, size, size);
-this.tile = tile;
+  super(x, y, size, size);
+  this.tile = tile;
 }
 
 // Draw the tile

@@ -2,9 +2,7 @@
 import java.awt.*;
 
 public class Water extends GameTile {
-
 public Water() {
-super(Color.BLUE, "Water", MovementCost = 100);
-}
-
+    super(Color.BLUE, "Water", MovementCost = 100);
+    }
 }
