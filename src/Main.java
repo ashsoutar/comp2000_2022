@@ -9,30 +9,35 @@ window.run();
 }
 
 private Main() {
-    Canvas canvas = new Canvas();
-    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    this.setContentPane(canvas);
-    this.pack();
-    this.setVisible(true);
-    }
-
-public void run() throws Exception {
-    while (true) {
-    this.repaint();
-    }
+Canvas canvas = new Canvas();
+this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+this.setContentPane(canvas);
+this.pack();
+this.setVisible(true);
 }
 
-//sets size of window
+public void run() throws Exception {
+while (true) {
+this.repaint();
+}
+}
+
 class Canvas extends JPanel {
-    GameContainer gameContainer;
-    public Canvas() {
-    setPreferredSize(new Dimension(720, 720));
+
+GameContainer gameContainer;
+
+
+//sets size of window
+public Canvas() {
+setPreferredSize(new Dimension(720, 720));
+gameContainer = new GameContainer();
 }
 
 @Override
 public void paint(Graphics g) {
-    gameContainer.paint(g, getMousePosition());
+gameContainer.paint(g, getMousePosition());
 }
 
 }
 }
+
