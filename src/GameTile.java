@@ -1,24 +1,25 @@
+//outline for all cell blocks to follow i.e. sets the heirarchy
 import java.awt.*;
 
-public abstract class Tile implements Heirarchy {
+public abstract class GameTile implements Heirarchy {
 
+//outlines the colour, cost and type
 Color color;
 static int MovementCost;
 String type;
 
-// Constructors
-Tile() {
+// adds colour and type parameters
+GameTile() {
 }
-
-Tile(Color color, String type) {
+GameTile(Color color, String type) {
 this.color = color;
 this.type = type;
 }
 
-Tile(Color color, String type, int MovementCost) {
+GameTile(Color color, String type, int MovementCost) {
 this.color = color;
 this.type = type;
-Tile.MovementCost = MovementCost;
+GameTile.MovementCost = MovementCost;
 }
 
 public void paint(Graphics g, Cell cell) {

@@ -15,7 +15,7 @@ this.width = width;
 this.height = height;
 int random;
 
-Tile type;
+GameTile type;
 for (int i = 0; i < cells.length; i++) {
 for (int j = 0; j < cells[i].length; j++) {
 random = (int) (Math.random() * 10); // sets random
@@ -65,7 +65,7 @@ g.drawRect(cell.x + 2, cell.y + 2, cell.height - 4, cell.width - 4);
 g.drawRect(cell.x + 3, cell.y + 3, cell.height - 6, cell.width - 6);
 }
 
-// draws 
+// draws cells while in grid boundary
 public void paint(Graphics g) {
 for (int i = 0; i < cells.length; i++) {
 for (int j = 0; j < cells[i].length; j++) {
@@ -77,7 +77,7 @@ cells[i][j].paint(g);
 // Returns whether or not the grid contains a given Point
 public boolean contains(Point point) {
 
-// Check boundaries of grid area
+// checks for null and border outlines
 if (point != null && point.x > border && point.y > border && point.x < boardSize + border
 && point.y < boardSize + border) {
 return true;

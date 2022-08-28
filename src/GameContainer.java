@@ -4,16 +4,16 @@ import java.util.Optional;
 public class GameContainer {
 
 Grid grid;
-// Default constructor sets default sizes
+// sets window size
 public GameContainer() {
 grid = new Grid(720, 720);
 }
-
+// sets width and height parameters
 public GameContainer(int width, int height) {
 grid = new Grid(width, height);
 }
 
-// Draws the grid on the JPanel and mouse position highlight
+// draws outlined mouse position
 public void paint(Graphics g, Point mousePos) {
 grid.paint(g);
 Optional<Cell> cell = grid.cellAtPoint(mousePos);
