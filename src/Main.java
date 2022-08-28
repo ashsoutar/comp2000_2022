@@ -1,5 +1,6 @@
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -8,7 +9,7 @@ public class Main extends JFrame {
     class Canvas extends JPanel {
       Stage stage;
 
-      public Canvas() {
+      public Canvas() throws IOException {
         setPreferredSize(new Dimension(1024, 720));
         stage = new Stage();
         stage = StageReader.readStage("data/stage1.rvb");
@@ -25,7 +26,7 @@ public class Main extends JFrame {
       window.run();
     }
 
-    private Main() {
+    private Main() throws IOException {
       this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       Canvas canvas = new Canvas();
       this.setContentPane(canvas);
