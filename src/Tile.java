@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public abstract class Tile implements IDrawable {
+public abstract class Tile implements Heirarchy {
 
 Color color;
 static int MovementCost;
