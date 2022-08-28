@@ -2,12 +2,9 @@ import java.awt.Dimension;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.Graphics;
-<<<<<<< HEAD
 import java.io.IOException;
-=======
 import java.time.Duration;
 import java.time.Instant;
->>>>>>> 7f61c6bbe29ceebbf635a3a8f84832cf905a6c0d
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
