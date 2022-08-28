@@ -18,7 +18,7 @@ public void paint(Graphics g, Point mousePos) {
 grid.paint(g);
 Optional<Cell> cell = grid.cellAtPoint(mousePos);
 if (cell.isPresent()) {
-grid.paintHover(g, cell.get());
+grid.GridOutline(g, cell.get());
 }
 }
 }

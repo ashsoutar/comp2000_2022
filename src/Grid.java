@@ -4,47 +4,47 @@ import java.util.*;
 class Grid {
 
 int width, height;
-// Default values for border and size of cells
-int border = 10, cellSize = 35, dimension = 20;
-int boardSize = cellSize * dimension;
-Cell[][] cells = new Cell[dimension][dimension];
+// sets the size of cells in grid
+int border = 10, cellSize = 35, cellLength = 20;
+int boardSize = cellSize * cellLength;
+Cell[][] cells = new Cell[cellLength][cellLength];
 
 // Constructor that initialises grid with randomised tiles
 public Grid(int width, int height) {
 this.width = width;
 this.height = height;
-int rand;
+int random;
 
-Tile tileType;
+Tile type;
 for (int i = 0; i < cells.length; i++) {
 for (int j = 0; j < cells[i].length; j++) {
-rand = (int) (Math.random() * 10); // New random number for tile selection
-// Initialise tile depending on randomised selection
-switch (rand) {
+random = (int) (Math.random() * 10); // sets random
+// sets coloured tiles 
+switch (random) {
 case 0:
-tileType = new Water();
+type = new Water();
 break;
 case 1:
-tileType = new Stone();
+type = new Stone();
 break;
 case 2:
-tileType = new Fence();
-break;
-default:
-tileType = new Grass();
+type = new Grass();
 break;
 case 3:
-tileType = new Wall();
+type = new Wall();
 break;
 case 4:
-tileType = new Sand();
+type = new Fence();
+break;
+default:
+type = new Sand();
 }
-cells[i][j] = new Cell(border + cellSize * i, border + cellSize * j, tileType);
+cells[i][j] = new Cell(border + cellSize * i, border + cellSize * j, type);
 }
 }
 }
 
-// Checks whether there is a grid cell at the given Point
+//checks for possible null cell points
 public Optional<Cell> cellAtPoint(Point point) {
 
 if (point == null || !contains(point)) {
@@ -57,15 +57,15 @@ int y = (point.y - border) / cellSize;
 return Optional.of(cells[x][y]);
 }
 
-// Draws the hover outline over a given Cell
-public void paintHover(Graphics g, Cell cell) {
+//outlines the grid cell on hover
+public void GridOutline(Graphics g, Cell cell) {
 g.setColor(Color.GRAY);
-g.drawRect(cell.x + 1, cell.y + 1, cell.x - 2, cell.y - 2);
-g.drawRect(cell.x + 2, cell.y + 2, cell.x - 4, cell.y - 4);
-g.drawRect(cell.x + 3, cell.y + 3, cell.x - 6, cell.y - 6);
+g.drawRect(cell.x + 1, cell.y + 1, cell.height - 2, cell.width - 2);
+g.drawRect(cell.x + 2, cell.y + 2, cell.height - 4, cell.width - 4);
+g.drawRect(cell.x + 3, cell.y + 3, cell.height - 6, cell.width - 6);
 }
 
-// Draw the grid on the Jpanel
+// draws 
 public void paint(Graphics g) {
 for (int i = 0; i < cells.length; i++) {
 for (int j = 0; j < cells[i].length; j++) {
@@ -85,4 +85,5 @@ return true;
 return false;
 }
 }
+
 
