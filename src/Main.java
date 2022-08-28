@@ -4,8 +4,8 @@ import java.awt.*;
 class Main extends JFrame {
 
 public static void main(String[] args) throws Exception {
-Main Canvas = new Main();
-Canvas.run();
+Main window = new Main();
+window.run();
 }
 
 private Main() {
