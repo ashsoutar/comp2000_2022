@@ -3,7 +3,8 @@ import java.awt.Graphics;
 import java.time.Duration;
 import java.time.Instant;
 
-class Main extends JFrame {
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class Main extends JFrame {
     class Canvas extends JPanel {
@@ -50,21 +51,3 @@ public class Main extends JFrame {
       }
     }
 }
-
-class Canvas extends JPanel {
-
-GameContainer gameContainer;
-
-//sets size of window
-public Canvas() {
-    setPreferredSize(new Dimension(720, 720));
-    gameContainer = new GameContainer();
-}
-
-@Override
-public void paint(Graphics g) {
-    gameContainer.paint(g, getMousePosition());
-     }      
-    }
-}
-
