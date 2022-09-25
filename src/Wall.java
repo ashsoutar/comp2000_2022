@@ -1,8 +1,9 @@
-// sets colour and type for Wall
-import java.awt.*;
+import java.awt.Color;
 
-public class Wall extends GameTile {
-public Wall() {
-    super(Color.DARK_GRAY, "Stone");
-    }
+public class Wall extends Boundary {
+  public Wall(char col, int row, int x, int y) {
+    super(col, row, x, y);
+    color = Color.DARK_GRAY;
+    description = "Wall";
+  }
 }

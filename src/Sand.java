@@ -1,8 +1,10 @@
-//sets type and colour of sand
-import java.awt.*;
+import java.awt.Color;
 
-public class Sand extends GameTile {
-public Sand() {
-    super(Color.YELLOW, "Sand", MovementCost = 50);
-    }
+public class Sand extends Surface {
+  public Sand(char col, int row, int x, int y) {
+    super(col, row, x, y);
+    color = Color.YELLOW;
+    cost = 50;
+    description = "Sand";
+  }
 }

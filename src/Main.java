@@ -1,23 +1,53 @@
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.time.Duration;
+import java.time.Instant;
 
 class Main extends JFrame {
 
-public static void main(String[] args) throws Exception {
-    Main window = new Main();
-    window.run();
-}
+public class Main extends JFrame {
+    class Canvas extends JPanel {
+      Stage stage;
+      public Canvas() {
+        setPreferredSize(new Dimension(720, 720));
+        stage = new Stage();
+      }
 
-private Main() {
-    Canvas canvas = new Canvas();
-    this.setContentPane(canvas);
-    this.pack();
-    this.setVisible(true);
-}
+      @Override
+      public void paint(Graphics g) {
+        stage.paint(g, getMousePosition());
+      }
+    }
 
-public void run() throws Exception {
-    while (true) {
-        this.repaint();
+    final Canvas canvas;
+
+    private Main() {
+      this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      canvas = new Canvas();
+      this.setContentPane(canvas);
+      this.pack();
+      this.setVisible(true);
+    }
+
+    public static void main(String[] args) throws Exception {
+      Main window = new Main();
+      window.run();
+    }
+
+    public void run() {
+      while(true) {
+        Instant startTime = Instant.now();
+        canvas.repaint();
+        Instant endTime = Instant.now();
+        long howLong = Duration.between(startTime, endTime).toMillis();
+        try {
+          Thread.sleep(20l - howLong);
+        } catch (InterruptedException e) {
+          System.out.println("thread was interrupted, but who cares?");
+        } catch (IllegalArgumentException e) {
+          System.out.println("application can't keep up with framratte");
+        }
+      }
     }
 }
 

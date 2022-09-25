@@ -1,8 +1,10 @@
-//sets type and colour of water
-import java.awt.*;
+import java.awt.Color;
 
-public class Water extends GameTile {
-public Water() {
-    super(Color.BLUE, "Water", MovementCost = 100);
-    }
+public class Water extends Surface {
+  public Water(char col, int row, int x, int y) {
+    super(col, row, x, y);
+    color = Color.BLUE;
+    cost = 100;
+    description = "Water";
+  }
 }
