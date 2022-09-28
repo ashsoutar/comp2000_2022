@@ -11,7 +11,7 @@ public abstract class Actor {
   protected MoveStrategy strat;
   protected String desc;
   protected BufferedImage img;
-///test
+
   public Actor(Cell l, BufferedImage i, String d, Player p, int s) {
     loc = l;
     img = i;
